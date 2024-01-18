@@ -1,0 +1,152 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="itProducts">
+  <xs:complexType>
+    <xs:sequence>
+
+        <xs:element name="mainMenu"  minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+            <xs:element name="image">
+              <xs:complexType>
+                <xs:attribute name="source" type="xs:ENTITY" use="required"/>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="catalog" type="catalogueType" minOccurs="1" maxOccurs="1">
+
+          <xs:key name="typeKey">
+            <xs:selector xpath="types/type"/>
+            <xs:field xpath="@id"/>
+          </xs:key>
+          
+          <xs:key name="purposeKey">
+            <xs:selector xpath="purposes/purpose"/>
+            <xs:field xpath="@id"/>
+          </xs:key>
+
+          <xs:keyref name="typeKeyRef" refer="typeKey">
+              <xs:selector xpath="products/product/type"/>
+              <xs:field xpath="@idref"/>
+          </xs:keyref>
+
+          <xs:keyref name="purposeKeyRef" refer="purposeKey">
+              <xs:selector xpath="products/product/purpose"/>
+              <xs:field xpath="@idref"/>
+          </xs:keyref>
+          
+       </xs:element>
+
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+  
+
+<xs:element name="types">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element 
+        name="type" minOccurs="2" maxOccurs="unbounded" 
+        type="idTypeOnly"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="purposes">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="purpose" minOccurs="2" maxOccurs="unbounded" 
+      type="idTypeOnly"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="items">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="iteam" minOccurs="2" maxOccurs="unbounded" 
+      type="idTypeOnly"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:complexType name="idTypeOnly">
+  <xs:simpleContent>
+    <xs:extension base="xs:string">
+      <xs:attribute name="id" type="xs:ID" use="required"/>
+    </xs:extension>
+  </xs:simpleContent>
+</xs:complexType>
+
+
+
+<xs:complexType name="catalogueType">
+    <xs:sequence>
+      <xs:element ref="types"/>
+      <xs:element ref="purposes"/>
+      <xs:element ref="items"/>
+      <xs:element ref="products"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:element name="products">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="product" type="productType" 
+          minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="productType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="1"/>
+      <!--computerType-->
+
+      <xs:element name="display" type="xs:string" minOccurs="0"/>
+      <xs:element name="displayhertzs" type="xs:integer" minOccurs="0"/>
+      <xs:element name="processor" type="xs:string" minOccurs="0"/>			
+      <xs:element name="gpu" type="xs:string" minOccurs="0"/>
+      <xs:element name="ram" type="xs:integer" minOccurs="0"/>
+
+      <!--videocardsType-->
+
+      <xs:element name="memory" type="xs:integer" minOccurs="0"/>				
+      <xs:element name="memoryspeed" type="xs:string" minOccurs="0"/>
+      <xs:element name="bandwidth" type="xs:integer" minOccurs="0"/>
+
+      <!--processorsType-->
+
+      <xs:element name="corephis" type="xs:integer" minOccurs="0"/> 
+      <xs:element name="corelog" type="xs:integer" minOccurs="0"/> 
+      <xs:element name="frequencybase" type="xs:float" minOccurs="0"/>
+      <xs:element name="frequencyboost" type="xs:float" minOccurs="0"/>
+      <xs:element name="cache" type="xs:string" minOccurs="0"/>
+      <xs:element name="tdp" type="xs:string" minOccurs="0"/>
+
+      <!--antivirusType-->
+      <xs:element name="malware" type="xs:integer" minOccurs="0"/> 
+      <xs:element name="devices" type="xs:integer" minOccurs="0"/> 
+      <xs:element name="compatibility" type="xs:string" minOccurs="0"/>
+
+      <xs:element name="type" type="onlyidref"/>
+      <xs:element name="purpose" type="onlyidref"/>
+      <xs:element name="image">
+        <xs:complexType>
+          <xs:attribute name="source" type="xs:ENTITY" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required"/>
+    <xs:attribute name="iteam" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="onlyidref">
+    <xs:attribute name="idref" type="xs:IDREF" use="required"/>
+  </xs:complexType>
+
+</xs:schema>

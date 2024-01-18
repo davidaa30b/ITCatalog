@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="itCatalog.xsl"?>
+
+<!DOCTYPE itProducts [
+  	<!NOTATION PNG SYSTEM "image/png">
+  	<!ENTITY main1_image PUBLIC "main1_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/main/zen.png" NDATA PNG>
+  	<!ENTITY laptop1_image PUBLIC "laptop1_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/laptop pics/razer.png" NDATA PNG>
+  	<!ENTITY laptop2_image PUBLIC "laptop2_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/laptop pics/msi1.png" NDATA PNG>
+	<!ENTITY laptop3_image PUBLIC "laptop3_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/laptop pics/rog1.png" NDATA PNG>
+	<!ENTITY laptop4_image PUBLIC "laptop4_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/laptop pics/aspire.png" NDATA PNG>
+	<!ENTITY laptop5_image PUBLIC "laptop5_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/laptop pics/triton.png" NDATA PNG>
+
+	<!ENTITY processor1_image PUBLIC "processor1_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/processors pics/pn.png" NDATA PNG>
+	<!ENTITY processor2_image PUBLIC "processor2_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/processors pics/5950x.png" NDATA PNG>
+	<!ENTITY processor3_image PUBLIC "processor3_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/processors pics/10k.png" NDATA PNG>
+	<!ENTITY processor4_image PUBLIC "processor4_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/processors pics/i3.png" NDATA PNG>
+	<!ENTITY processor5_image PUBLIC "processor5_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/processors pics/thr.png" NDATA PNG>
+
+	<!ENTITY vidcard1_image PUBLIC "vidcard1_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/videocards pic/rx1.png" NDATA PNG>
+	<!ENTITY vidcard2_image PUBLIC "vidcard2_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/videocards pic/rx1.png" NDATA PNG>
+	<!ENTITY vidcard3_image PUBLIC "vidcard3_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/videocards pic/3070.png" NDATA PNG>
+	<!ENTITY vidcard4_image PUBLIC "vidcard4_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/videocards pic/3080.png" NDATA PNG>
+	<!ENTITY vidcard5_image PUBLIC "vidcard5_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/videocards pic/3090.png" NDATA PNG>
+
+	<!ENTITY antvir1_image PUBLIC "antvir1_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/antiviruses/kasperski.png" NDATA PNG>
+	<!ENTITY antvir2_image PUBLIC "antvir2_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/antiviruses/pandadome.png" NDATA PNG>
+	<!ENTITY antvir3_image PUBLIC "antvir3_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/antiviruses/integro.png" NDATA PNG>
+	<!ENTITY antvir4_image PUBLIC "antvir4_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/antiviruses/mcafee.png" NDATA PNG>
+	<!ENTITY antvir5_image PUBLIC "antvir5_image_identifier" "https://raw.githubusercontent.com/davidaa30b/ITCatalog/main/images/antiviruses/totalav.png" NDATA PNG>
+
+	<!ELEMENT itProducts (mainMenu, catalog)>
+	<!ATTLIST itProducts 
+	xmlns:xsi CDATA #FIXED "http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation CDATA #FIXED "itCatalogScheme.xsd">
+
+	<!ELEMENT mainMenu (image)>
+	
+	<!ELEMENT catalog (types, purposes, items, products)>
+	<!ELEMENT types (type+)>
+	<!ELEMENT type (#PCDATA)>
+	<!ATTLIST type id ID #IMPLIED>
+	<!ATTLIST type idref IDREF #IMPLIED>
+
+	<!ELEMENT purposes (purpose+)>
+	<!ELEMENT purpose (#PCDATA)>
+	<!ATTLIST purpose id ID #IMPLIED>
+	<!ATTLIST purpose idref IDREF #IMPLIED>
+
+
+	<!ELEMENT items (iteam+)>
+	<!ELEMENT iteam EMPTY>
+	<!ATTLIST iteam id ID #REQUIRED>
+
+	<!ELEMENT products (product+)>
+	<!ELEMENT product ((name, display, displayhertzs, processor, gpu, ram, type, purpose, image) | 
+					   (name, corephis, corelog, frequencybase, frequencyboost, cache, tdp, type, purpose, image) |	
+					   (name , memory,memoryspeed,bandwidth,frequencybase,frequencyboost,type,purpose,image) | 
+					   (name , malware,devices,compatibility, type, purpose, image))>
+	<!ATTLIST product iteam IDREF #REQUIRED id ID #REQUIRED>
+
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT corephis (#PCDATA)>
+	<!ELEMENT corelog (#PCDATA)>
+	<!ELEMENT frequencybase (#PCDATA)>
+	<!ELEMENT frequencyboost (#PCDATA)>
+	<!ELEMENT cache (#PCDATA)>
+	<!ELEMENT tdp (#PCDATA)>
+	<!ELEMENT display (#PCDATA)>
+	<!ELEMENT displayhertzs (#PCDATA)>
+	<!ELEMENT processor (#PCDATA)>
+	<!ELEMENT gpu (#PCDATA)>
+	<!ELEMENT ram (#PCDATA)>
+  	<!ELEMENT memory (#PCDATA)>
+  	<!ELEMENT memoryspeed (#PCDATA)>
+  	<!ELEMENT bandwidth (#PCDATA)>
+    <!ELEMENT malware (#PCDATA)>
+	<!ELEMENT devices (#PCDATA)>
+	<!ELEMENT compatibility (#PCDATA)>
+
+	
+	<!ELEMENT image EMPTY>
+	<!ATTLIST image source ENTITY #REQUIRED>
+	]>
+
+<itProducts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="itCatalogScheme.xsd">
+
+	<mainMenu>
+		<image source="main1_image"/>
+	</mainMenu>	
+	
+	<catalog>
+		<types>
+			<type id="software"/>
+			<type id="hardware"/>
+		</types>	
+		<purposes>
+			<purpose id="office"/>
+			<purpose id="gaming"/>
+		</purposes>
+		<items>
+			<iteam id="processor"/>
+			<iteam id="videocard"/>
+			<iteam id="computer"/>
+			<iteam id="antivirus"/>
+		</items>
+		<products>
+			<product iteam="processor" id="proc1">
+				<name>AMD Ryzen Threadripper 3960X </name>
+				<corephis>24</corephis> 
+				<corelog>48</corelog> 
+				<frequencybase>3.8</frequencybase>
+				<frequencyboost>4.5</frequencyboost>
+				<cache>128</cache> 
+				<tdp>280</tdp> 
+				<type idref="hardware"/>
+      			<purpose idref="gaming"/>
+				<image source="processor1_image"/>
+			</product>
+			<product iteam="processor" id="proc2">
+				<name>AMD Ryzen 9 5950X</name>
+				<corephis>12</corephis>
+				<corelog>24</corelog>
+				<frequencybase>3.7</frequencybase>
+				<frequencyboost>4.8</frequencyboost>	
+				<cache>64</cache>
+				<tdp>105</tdp>
+				<type idref="hardware"/>
+				<purpose idref="gaming"/>
+				<image source="processor2_image"/>
+			</product>
+			<product iteam="processor" id="proc3">
+				<name>Intel core i9 10900K </name>
+				<corephis>10</corephis>
+				<corelog>20</corelog>
+				<frequencybase>3.7</frequencybase>
+				<frequencyboost>5.3</frequencyboost>
+				<cache>20</cache>
+				<tdp>95</tdp>
+				<type idref="hardware"/>
+				<purpose idref="gaming"/>
+				<image source="processor3_image"/>
+			</product>
+			<product iteam="processor" id="proc4">
+				<name>Intel core i9 10900KF </name>
+				<corephis>10</corephis>
+				<corelog>20</corelog>
+				<frequencybase>3.7</frequencybase>
+				<frequencyboost>5.3</frequencyboost>
+				<cache>20</cache>
+				<tdp>95</tdp>
+				<type idref="hardware"/>
+				<purpose idref="gaming"/>
+				<image source="processor4_image"/>
+			</product>
+			<product iteam="processor" id="proc5">
+				<name>AMD Ryzen 9 5900X</name>
+				<corephis>12</corephis>
+				<corelog>24</corelog>
+				<frequencybase>3.7</frequencybase>
+				<frequencyboost>4.8</frequencyboost>
+				<cache>64</cache>
+				<tdp>105</tdp>
+				<type idref="hardware"/>
+				<purpose idref="gaming"/>
+				<image source="processor5_image"/>
+			</product>
+			<product iteam="computer" id="comp1">
+				<name>Razer Blade 15(2020) </name>
+				<display>Full HD 1920:1080 IPS </display>
+				<displayhertzs>300</displayhertzs>
+				<processor>Intel core i7 8750H  Turbo boost 4.2Ghz  base Clock 2.4Ghz  </processor>
+				<gpu> RTX 2080 Super GPU with Ray Tracing </gpu>
+				<ram>16</ram>
+				<type idref="hardware"/>
+				<purpose idref="gaming"/>
+				<image source="laptop1_image"/>
+			</product>
+
+			<product iteam="computer" id="comp2">
+				<name>MSI GP65 Leopard 10SFK </name>
+				<display>Full HD 1920:1080 IPS </display>
+				<displayhertzs>144</displayhertzs>
+				<processor>Intel core i7 10750H Processor  Turbo boost 5Ghz  base Clock 2.6Ghz  </processor>
+				<gpu> RTX 2070 Max-Q GPU with Ray Tracing </gpu>
+				<ram>16</ram>
+				<type idref="hardware"/>
+				<purpose idref="gaming"/>
+				<image source="laptop2_image"/>
+			</product>
+			<product iteam="computer" id="comp3">
+				<name>ASUS ROG Zephyrus G14 </name>
+				<display>Full HD 1920:1080 IPS </display>
+				<displayhertzs>144</displayhertzs>
+				<processor>AMD Ryzen 9 4900HS Processor </processor>
+				<gpu> RTX 2060 Max-Q GPU with Ray Tracing</gpu>
+				<ram> 32</ram>
+				<type idref="hardware"/>
+				<purpose idref="gaming"/>
+				<image source ="laptop3_image"/>
+			</product>
+			<product iteam="computer" id="comp4">
+				<name>Acer Predator Triton 500 </name>
+				<display>Full HD 1920:1080 IPS </display>
+				<displayhertzs>300</displayhertzs>
+				<processor>Intel core i7 10750H Processor  Turbo boost 5Ghz  base Clock 2.6Ghz  </processor>
+				<gpu> RTX 2080 Super GPU with Ray Tracing </gpu>
+				<ram> 16</ram>
+				<type idref="hardware"/>
+				<purpose idref="gaming"/>
+				<image source="laptop4_image"/>
+			</product>
+			<product iteam="computer" id="comp5">
+				<name>Acer Nitro 5</name>
+				<display>Full HD 1920:1080 IPS </display>
+				<displayhertzs>60</displayhertzs>
+				<processor>AMD Ryzen 5 4600H Processor</processor>
+				<gpu> GTX 1650 GPU</gpu>
+				<ram> 8</ram>
+				<type idref="hardware"/>
+				<purpose idref="office"/>
+				<image source="laptop5_image"/>
+			</product>
+		
+			<product iteam="videocard" id="vid1"> 
+				<name>NVIDIA RTX 3090</name>
+				<memory>24</memory> 
+				<memoryspeed>GDDR6X</memoryspeed>
+				<bandwidth>936</bandwidth>
+				<frequencybase>1.4</frequencybase>
+				<frequencyboost>1.7</frequencyboost>
+				<type idref="hardware"/>
+				<purpose idref="gaming"/>
+				<image source="vidcard1_image"/>
+			</product>
+			<product iteam="videocard" id="vid2">
+				<name>AMD Radeon RX 6800 XT</name>
+				<memory>16</memory> 
+				<memoryspeed>GDDR6</memoryspeed> 
+				<bandwidth>512</bandwidth>
+				<frequencybase>1.8</frequencybase>
+				<frequencyboost>2.25</frequencyboost>	
+				<type idref="hardware"/>
+				<purpose idref="gaming"/>
+				<image source="vidcard2_image"/>
+			</product>
+			<product iteam="videocard" id="vid3">
+				<name>NVIDIA RTX 3080</name>
+				<memory>10</memory> 
+				<memoryspeed>GDDR6X</memoryspeed>
+				<bandwidth>760</bandwidth>
+				<frequencybase>1.4</frequencybase>
+				<frequencyboost>1.7</frequencyboost>
+				<type idref="hardware"/>
+				<purpose idref="gaming"/>
+				<image source="vidcard3_image"/>
+			</product>
+			<product iteam="videocard" id="vid4">
+				<name>NVIDIA RTX 3070</name>
+				<memory>8</memory> 
+				<memoryspeed>GDDR6</memoryspeed>
+				<bandwidth>448</bandwidth>
+				<frequencybase>1.5</frequencybase>
+				<frequencyboost>1.7</frequencyboost>
+				<type idref="hardware"/>
+				<purpose idref="gaming"/>
+				<image source="vidcard4_image"/>
+			</product>
+			<product iteam="videocard" id="vid5">
+				<name>AMD Radeon RX 6900 XT</name>
+				<memory>16</memory> 
+				<memoryspeed>GDDR6</memoryspeed>
+				<bandwidth>512</bandwidth>
+				<frequencybase>1.8</frequencybase>
+				<frequencyboost>2.25</frequencyboost>	
+				<type idref="hardware"/>
+				<purpose idref="gaming"/>
+				<image source="vidcard5_image"/>
+			</product>
+		
+			<product iteam="antivirus" id="av1">
+				<name>Kaspersky Premium</name>
+				<malware>100</malware> <!--malware detection rate-->
+				<devices>20</devices> <!--Number of devices-->
+				<compatibility>Windows,MAC OS,Android,iOS</compatibility> <!--OS compatibility-->
+				<type idref="software"/>
+				<purpose idref="office"/>
+				<image source="antvir1_image"/>
+			</product>
+			<product iteam="antivirus" id="av2">
+				<name>Panda Dome</name>
+				<malware>95</malware> 
+				<devices>100</devices> 
+				<compatibility>Windows,MAC OS,Android,iOS</compatibility> 
+				<type idref="software"/>
+				<purpose idref="office"/>
+				<image source="antvir2_image"/>
+			</product>
+			<product iteam="antivirus" id="av3">
+				<name>Intego</name>
+				<malware>100</malware> 
+				<devices>5</devices> 
+				<compatibility>MAC OS,iOS</compatibility> 
+				<type idref="software"/>
+				<purpose idref="office"/>
+				<image source="antvir3_image"/>
+			</product>
+			<product iteam="antivirus" id="av4">
+				<name>McAfee Total Protection</name>
+				<malware>100</malware> 
+				<devices>100</devices> 
+				<compatibility>Windows,MAC OS,Android,iOS</compatibility> 
+				<type idref="software"/>
+				<purpose idref="office"/>
+				<image source="antvir4_image"/>
+			</product>
+			<product iteam="antivirus" id="av5">
+				<name>TotalAV</name>
+				<malware>99</malware> 
+				<devices>6</devices> 
+				<compatibility>Windows,MAC OS,Android,iOS</compatibility> 
+				<type idref="software"/>
+				<purpose idref="office"/>
+				<image source="antvir5_image"/>
+			</product>
+		</products>
+	</catalog>
+</itProducts>

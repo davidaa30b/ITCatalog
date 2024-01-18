@@ -1,0 +1,54 @@
+﻿.tt {
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin: auto;
+    width: 50%; /* You can adjust the width as needed */
+    max-width: 100%; /* Set a maximum width if needed */
+    height: 50%;
+}
+
+.app::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+tr {
+    color: white;
+}
+
+.ma {
+    margin-left: 2px;
+    padding: 2px;
+}
+
+.computer-image {
+    margin-top: 20px;
+    height: 110px;
+    width: 180px;
+    /* additional styles for image placeholder */
+}
+
+.processor-image{
+    margin-left: 80px;
+    margin-top: 20px;
+    height: 110px;
+    width: 110px;
+}
+
+.videocard-image{
+    margin-top: 20px;
+    height: 105px;
+    width: 195px;
+}
+
+.antivirus-image{
+    border: 3px #6C76AF;
+    margin-top: 20px;
+    height: 105px;
+    width: 140px;
+}
+
+tr:hover {
+    background-color: #6C76AF;
+}
